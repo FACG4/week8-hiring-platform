@@ -1,7 +1,7 @@
 const dbConnection = require('../db_connection');
 const profile =(userId,cb)=>{
 const sql={
-  text:'SELECT * FROM employees WHERE id=$1 ',
+  text:'SELECT * FROM employees INNER JOIN skills ON employees.skill_id=skills.id WHERE employees.id=$1 ',
   values:[userId]
 }
 dbConnection.query(sql,(err,result)=>{
