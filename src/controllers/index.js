@@ -1,15 +1,14 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const signup= require('./signup')
-// const fruits = require('./fruits');
-// const error = require('./error');
+const signup= require('./signup');
 
 
 
 
 // router.get("/", home);
-// router.get("/", signup);
+router.get("/", signup.get);
+router.post("/signup", signup.post);
 // router.get('/fruits', fruits);
 // router.get('/fruits/:singleFruit', singleFruit);
 // router.use(error.client);
