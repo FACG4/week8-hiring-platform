@@ -1,5 +1,6 @@
   BEGIN;
-  DROP TABLE IF EXISTS employees , employers, skills CASCADE;
+
+  DROP TABLE IF EXISTS employees, employers, skills CASCADE;
 
   CREATE TABLE skills(
     id SERIAL PRIMARY KEY,
