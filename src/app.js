@@ -7,8 +7,8 @@ const exphbs = require('express-handlebars');
 
 const app = express();
 
-app.set('views',path.join(__dirname,'views'));
-app.set('view engine','hbs');
+app.set('views', path.join(__dirname,'views'));
+app.set('view engine', 'hbs');
 app.engine(
 	"hbs",
 	exphbs({
@@ -24,5 +24,5 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(controllers);
 
-
+console.log('app');
 module.exports = app;
