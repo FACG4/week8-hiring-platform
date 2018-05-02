@@ -2,11 +2,12 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const signup= require('./signup')
-// const fruits = require('./fruits');
-// const error = require('./error');
+const login = require('./login');
+const profile = require('./profile');
 
 
-
+router.get('/login',login.get)
+router.get('/profile/id=*',profile.profile)
 
 // router.get("/", home);
 // router.get("/", signup);
