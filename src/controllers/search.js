@@ -3,7 +3,6 @@ const error = require('./error');
 exports.post=(req,res)=>{
   const skills=req.body.skills
   findSkills(skills,(err, result) => {
-    // console.log(result,'rrrrrrrrrrrrrrrrrr');
     if (err) {
       throw new Error(err);
     }

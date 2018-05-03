@@ -15,7 +15,6 @@ router.use(cookieParser());
 router.post('/check_login',checkLogin.get)
 router.use((req,res,next)=>{
   checkCookies.get(req,res,(result)=>{
-    console.log(result,req.url);
     if (result=='logged') {
       router.get('/profile/:id',profile.profile)
       router.get('/',home.get)

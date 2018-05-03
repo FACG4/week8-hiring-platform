@@ -9,7 +9,6 @@ exports.get = (req, res) => {
 exports.post = (req, res) => {
   const userData=req.body;
   const isEmployee = req.body.isEmployee;
-  console.log(isEmployee);
   if(!isEmployee){
      signup.addEmployers(userData,(err,result)=>{
       if (err) {
@@ -21,7 +20,7 @@ exports.post = (req, res) => {
   } else {
      signup.addEmployee(userData,(err,result)=>{
       if (err) {
-        console.log(err);
+        throw new Error(err);
         return res.status(409).send();
       }
       return res.send();

@@ -10,6 +10,7 @@ dbConnection.query(sql,(err,res)=>{
   if (res.rows.length>0) {
     let hashPassword=res.rows[0].password
     bcrypt.compare(strPassword, hashPassword, function(error, result) {
+console.log(reault);      
       if (error) {
         return cb(err);
       }
@@ -22,7 +23,7 @@ dbConnection.query(sql,(err,res)=>{
     });
   }
   else {
-    return cb(null, 'invalied password or email')
+    return cb(null, true)
   }
 
 });

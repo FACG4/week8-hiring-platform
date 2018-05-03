@@ -5,7 +5,7 @@ exports.get=(req,res)=>{
   const password=req.body.user_password
 checkLoginQuery(email,password,(err,result)=>{
   if (err) {
-    return console.log(err)
+    throw new Error(err);
   }
     else if (result==='invalied password or email') {
       res.send('invalied password or email')
