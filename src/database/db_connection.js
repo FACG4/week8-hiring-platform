@@ -1,20 +1,24 @@
-const { Pool } = require("pg");
-const url = require("url");
-require("env2")("./config.env");
+const { Pool } = require('pg');
+require('env2')('./config.env');
+const url = require('url');
 
-if (!process.env.DB_URL) {
-  throw new Error("error");
+let dbUrl = process.env.DB_URL;
+
+if (process.env.NODE_ENV === 'test') {
+  dbUrl = process.env.TEST_DB_URL;
 }
 
-const parms = url.parse(process.env.DB_URL);
-const [username, password] = parms.auth.split(":");
+const params = url.parse(dbUrl);
+const [username, password] = params.auth.split(':');
 
 const options = {
-  host: parms.hostname,
-  port: parms.port,
-  database: parms.pathname.split("/")[1],
+  host: params.hostname,
+  port: params.port,
+  database: params.pathname.split('/')[1],
+  max: process.env.DB_MAX_CONNECTIONS || 2,
   user: username,
-  password
+  password,
+  ssl: this.host !== 'localhost',
 };
 
 module.exports = new Pool(options);
