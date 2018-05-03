@@ -8,12 +8,12 @@ if (token) {
           return cb('changed')
         }
         else {
-            cb('logged')
+            cb(true)
         }
       })
 }
 else {
-  cb('notLogged')
+  cb(false)
 
 }
   }

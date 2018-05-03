@@ -10,7 +10,6 @@ dbConnection.query(sql,(err,res)=>{
   if (res.rows.length>0) {
     let hashPassword=res.rows[0].password
     bcrypt.compare(strPassword, hashPassword, function(error, result) {
-console.log(reault);      
       if (error) {
         return cb(err);
       }
