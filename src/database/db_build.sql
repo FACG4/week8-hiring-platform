@@ -12,8 +12,8 @@ CREATE TABLE employees(
   Lname VARCHAR(30) NOT NULL,
   email VARCHAR(30) NOT NULL,
   password VARCHAR(80) NOT NULL,
-  skill_id INTEGER REFERENCES skills(id)
-  carrer VARCHAR(30) NOT NULL,
+  skill_id INTEGER REFERENCES skills(id),
+  career VARCHAR(30) NOT NULL,
   mobile VARCHAR(30) Not Null
 );
 
@@ -29,9 +29,9 @@ INSERT INTO skills(title) VALUES ('Design'), ('Programming'),('Testing'),('Mento
 ('Scrum master'),('Coordinator');
 
 
-INSERT INTO employees(username, fname, lname, email, password, skill_id, carrer,mobile) VALUES
-('Sallam1994' , 'sallam' , 'Tanna', 'sallamtanna2015@hotmail.com' , '$2b$08$iwaJjyEnXTgOKK4G3zPT/eAVsAcGjfcmOKQZ0NoKwTladkj3LtrNe', 1, 'Engineer','123'),
-('Haneen Shahwan' , 'Haneen' , 'Shahwan', 'Haneen2015@hotmail.com' , '$2b$08$iwaJjyEnXTgOKK4G3zPT/eAVsAcGjfcmOKQZ0NoKwTladkj3LtrNe', 2, 'Engineer','1223');
+INSERT INTO employees( fname, Lname, email, password, skill_id, career,mobile) VALUES
+( 'sallam' , 'Tanna', 'sallamtanna2015@hotmail.com' , '$2b$08$iwaJjyEnXTgOKK4G3zPT/eAVsAcGjfcmOKQZ0NoKwTladkj3LtrNe', 1, 'Engineer','123'),
+('Haneen' , 'Shahwan', 'Haneen2015@hotmail.com' , '$2b$08$iwaJjyEnXTgOKK4G3zPT/eAVsAcGjfcmOKQZ0NoKwTladkj3LtrNe', 2, 'Engineer','1223');
 
 
 
