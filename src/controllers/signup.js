@@ -8,17 +8,8 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
   const userData=req.body;
-  if(userData.user_job){
-    signup.addEmployers(userData,(err,result)=>{
-      if (err) {
-        return res.status(409).send();
-      }
-      return res.send();
-    })
-    res.render('login')
-  };
 
-  }
+
   signup.register(userData,(err,result)=>{
     if (err) {
       return res.status(409).send();
