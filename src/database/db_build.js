@@ -6,8 +6,8 @@ const sql = fs.readFileSync(path.join(__dirname, 'db_build.sql')).toString();
 
 const runBuild = (cb) => {
   dbConnection.query(sql, (err, res) => {
-    if (err) console.log(err);
-    console.log('successfully built');
+    if (err) throw new Error(err);
+    console.log('database successfully built');
   });
 };
 

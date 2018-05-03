@@ -5,6 +5,7 @@ const signup= require('./signup')
 const home= require('./home')
 const login = require('./login');
 const profile = require('./profile');
+const search = require('./search');
 const checkLogin = require('./check_login');
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
@@ -14,10 +15,10 @@ router.use(cookieParser());
 router.post('/check_login',checkLogin.get)
 router.use((req,res,next)=>{
   checkCookies.get(req,res,(result)=>{
-    console.log(result,req.url);
     if (result=='logged') {
       router.get('/profile/:id',profile.profile)
       router.get('/',home.get)
+      router.post('/search',search.post)
       router.get(['/login','/signup'],(req,res)=>{
         res.redirect('/')
       })
