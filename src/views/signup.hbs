@@ -1,0 +1,50 @@
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sign Up Form</title>
+      <link rel="stylesheet" href="css/normalize.css">
+      <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <form action="/signup" method="post">
+
+      <h1>Sign Up</h1>
+
+      <fieldset>
+         <label for="firstname">Username:</label>
+        <input type="text" id="username" name="username"></br>
+
+
+        <legend><span class="number">1</span>Your basic info</legend>
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstnamee" name="firstname"></br>
+
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname"></br>
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="useremail"></br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="userpassword"></br>
+
+
+
+        <input type="checkbox" name="isEmployee" value="employee">I am an employee<br>
+        <div id="yesEmployee" name="yesEmployee" class="">
+
+        </div>
+        </fieldset>
+
+
+
+
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <script src="../controllers/{{this.script}}.js"></script>
+  </body>
+</html>

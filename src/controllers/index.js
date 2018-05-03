@@ -10,7 +10,8 @@ router.get('/login',login.get)
 router.get('/profile/id=*',profile.profile)
 
 // router.get("/", home);
-// router.get("/", signup);
+router.get("/", signup.get);
+router.post("/signup", signup.post);
 // router.get('/fruits', fruits);
 // router.get('/fruits/:singleFruit', singleFruit);
 // router.use(error.client);
