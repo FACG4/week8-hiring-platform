@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 exports.get=(req,res,cb)=>{
 
+// console.log(req.cookies);
 const token=req.cookies.token
 if (token) {
       jwt.verify(token,process.env.SECRET, (err, decoded) =>{
@@ -8,12 +9,12 @@ if (token) {
           return cb('changed')
         }
         else {
-            cb('logged')
+            cb(true)
         }
       })
 }
 else {
-  cb('notLogged')
+  cb(false)
 
 }
   }

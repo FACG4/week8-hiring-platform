@@ -1,3 +1,8 @@
 exports.get = (req, res) => {
-  res.render('home');
+    if (req.logged) {
+      res.render('home');
+    }
+    else{
+      res.redirect('/login')
+    }
 }
