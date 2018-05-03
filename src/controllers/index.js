@@ -33,7 +33,7 @@ router.use((req,res,next)=>{
       })
     }
     else{
-      router.get((req,res)=>{
+      router.get('/',(req,res)=>{
         res.send('<h1>Eat your cookies</h1>')
       })
 

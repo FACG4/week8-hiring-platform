@@ -30,14 +30,14 @@ skills
   {{#each data}}
   <div class="tableResult row">
   <div class="title name">
-    <a href="/profile/{{this.id}}">  {{this.fname}} {{this.lname}}</a>
+    <a href="/profile/{{this.id}}">  {{uppercase this.fname}} {{uppercase this.lname}}</a>
 
   </div>
   <div class="title skills">
-  {{this.carrer}}
+  {{uppercase this.career}}
   </div>
   <div class="title  skills">
-  {{this.title}}
+  {{uppercase this.title}}
   </div>
 
   </div>
