@@ -4,7 +4,6 @@ exports.get=(req,res)=>{
   const email=req.body.user_email
   const password=req.body.user_password
 checkLoginQuery(email,password,(err,result)=>{
-  // console.log(result);
   if (err) {
     return console.log(err)
   }
@@ -12,7 +11,6 @@ checkLoginQuery(email,password,(err,result)=>{
       res.send('invalied password or email')
     }
     else {
-      //i need to make token and send it to front end
       createToken.get(res,result)
 
     }
