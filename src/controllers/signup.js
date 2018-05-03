@@ -8,12 +8,24 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
   const userData=req.body;
-  console.log('im in sign up . post');
-  signup.register(userData,(err,result)=>{
-    if (err) {
-      return res.status(409).send();
-    }
-    return res.send();
-  })
-  res.redirect('login')
-};
+  const isEmployee = req.body.isEmployee;
+  console.log(isEmployee);
+  if(!isEmployee){
+     signup.addEmployers(userData,(err,result)=>{
+      if (err) {
+        return res.status(409).send();
+      }
+      return res.send();
+    })
+    res.render('login')
+  } else {
+     signup.addEmployee(userData,(err,result)=>{
+      if (err) {
+        console.log(err);
+        return res.status(409).send();
+      }
+      return res.send();
+    })
+    res.redirect('login')
+  };
+}
