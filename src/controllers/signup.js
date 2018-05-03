@@ -25,5 +25,5 @@ exports.post = (req, res) => {
     }
     return res.send();
   })
-  res.render('login')
+  res.redirect('login')
 };
