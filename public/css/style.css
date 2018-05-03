@@ -26,7 +26,7 @@ h1 {
 
 .display{
   display: block;
-} 
+}
 
 input[type="text"],
 input[type="password"],
@@ -119,5 +119,15 @@ label.light {
   form {
     max-width: 480px;
   }
+
+}
+.searchTable{
+  display: flex;
+  flex-direction: column;
+}
+.row{
+  display: flex;
+  justify-content: space-around;
+  /* flex-direction: column; */
 
 }
