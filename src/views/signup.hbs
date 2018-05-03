@@ -21,7 +21,7 @@
 
         <label for="confirmpassword">Confirm Password:</label>
         <input type="password" id="confirmpassword" >
-        <label id = 'check'> <input type="checkbox" >hunt job</label>
+        <label id = 'check'> <input type="checkbox" name="isEmployee" value="isEmployee">hunt job</label>
 
         </fieldset>
 
@@ -29,43 +29,34 @@
 <div class="hidden" id="hidden">
 
 <fieldset>
-<legend><span class="number">2</span>Your profile</legend>
-<label for="bio">Biography:</label>
-<textarea id="bio" name="user_bio"></textarea>
+<legend><span class="number">2</span>Skills</legend>
 </fieldset>
 <fieldset>
-<label for="job">Job Role:</label>
-<select id="job" name="user_job">
-<optgroup label="Web">
-<option value="frontend_developer">Front-End Developer</option>
-<option value="php_developor">PHP Developer</option>
-<option value="python_developer">Python Developer</option>
-<option value="rails_developer"> Rails Developer</option>
-<option value="web_designer">Web Designer</option>
-<option value="WordPress_developer">WordPress Developer</option>
-</optgroup>
-<optgroup label="Mobile">
-<option value="Android_developer">Androild Developer</option>
-<option value="iOS_developer">iOS Developer</option>
-<option value="mobile_designer">Mobile Designer</option>
-</optgroup>
-<optgroup label="Business">
-<option value="business_owner">Business Owner</option>
-<option value="freelancer">Freelancer</option>
-</optgroup>
-<optgroup label="Other">
-<option value="secretary">Secretary</option>
-<option value="maintenance">Maintenance</option>
-</optgroup>
-<optgroup label="Add New">
-<option value="secretary">Add New</option>
-</optgroup>
+<label for="job">Select your skill:</label>
+
+
+
+<select id="job" name="skill">
+
+    <option value=1>Design</option>
+    <option value=2="Programming">Programming</option>
+    <option value=3>Testing</option>
+    <option value=4>Mentoring</option>
+    <option value=5>Content writing</option>
+    <option value=6>Scrum master</option>
+    <option value=7>Coordinator</option>
+
 </select>
-<input type="text" id="addNew" name="addNew" class='hidden'>
+
+
+<label for="career">Current carrer:</label>
+<input type="text" id="carrer" name="user_career">
+
+<label for="phone">Your phone number:</label>
+<input type="text" id="phone" name="user_phone">
 
 
 </fieldset>
-
 </div>
 
 
