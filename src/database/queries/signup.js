@@ -2,7 +2,9 @@ const db_connection = require('../db_connection');
 
 const bcrypt = require('bcrypt');
 
-const register=(userdata,callback) => {
+
+
+const addEmployers=(userdata,callback) => {
   const salt=bcrypt.genSaltSync(10);
   const passwordHash = bcrypt.hashSync(userdata.user_password,salt);
   const sql = {
@@ -17,6 +19,27 @@ const register=(userdata,callback) => {
   });
 }
 
+
+
+
+const addEmployee=(userdata,callback) => {
+  const salt=bcrypt.genSaltSync(10);
+  const passwordHash = bcrypt.hashSync(userdata.user_password,salt);
+  const sql = {
+  text: "INSERT INTO employees (fname,Lname,password,email,skill_id,career,mobile) VALUES ($1,$2,$3,$4,$5,$6,$7)",
+  values: [`${userdata.first_name}`,`${userdata.last_name}`, `${passwordHash}`,
+     `${userdata.user_email}` ,`${userdata.skill}` , `${userdata.user_career}`,`${userdata.user_phone}` ]}
+
+  db_connection.query(sql, (errRegister) => {
+    if (errRegister) {
+      callback(errRegister,null);
+    } else {
+      callback(null,true);
+    }
+  });
+}
+
 module.exports = {
-  register
+  addEmployers,
+  addEmployee
 };
