@@ -8,7 +8,7 @@
   );
 CREATE TABLE employees(
   id SERIAL PRIMARY KEY,
-   fname VARCHAR(30) NOT NULL,
+  fname VARCHAR(30) NOT NULL,
   Lname VARCHAR(30) NOT NULL,
   email VARCHAR(30) NOT NULL,
   password VARCHAR(80) NOT NULL,

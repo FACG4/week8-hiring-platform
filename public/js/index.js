@@ -1,14 +1,11 @@
-const hidden = document.getElementById('hidden');
-const check = document.getElementById('check');
-hidden.style.display = 'none';
+const hidden = document.querySelector('#hidden');
+const check = document.querySelector('#check');
 
 check.addEventListener('click',(e) => {
-if (hidden.style.display=='none') {
-  hidden.style.display='block'
-}
-else {
-  hidden.style.display='none'
-
-}
-
+  e.preventDefault();
+  if (!hidden.style.display || hidden.style.display === 'none') {
+    hidden.style.display = 'block';
+  } else {
+    hidden.style.display = 'none'
+  }
 })
