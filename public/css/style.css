@@ -114,6 +114,10 @@ label.light {
   border-radius: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 @media screen and (min-width: 480px) {
 
   form {
