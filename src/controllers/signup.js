@@ -8,12 +8,12 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
   const userData=req.body;
-  // console.log(userData);
+  console.log('im in sign up . post');
   signup.register(userData,(err,result)=>{
     if (err) {
       return res.status(409).send();
     }
     return res.send();
   })
-  res.render('login')
+  res.redirect('login')
 };

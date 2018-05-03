@@ -31,8 +31,8 @@ INSERT INTO skills(title) VALUES ('Design'), ('Programming'),('Testing'),('mento
 
 
 INSERT INTO employees(username, fname, lname, email, password, skill_id, carrer) VALUES
-('Sallam1994' , 'sallam' , 'Tanna', 'sallamtanna2015@hotmail.com' , '123456789', 1, 'Engineer'),
-('Haneen Shahwan' , 'Haneen' , 'Shahwan', 'Haneen2015@hotmail.com' , '123456789', 2, 'Engineer');
+('Sallam1994' , 'sallam' , 'Tanna', 'sallamtanna2015@hotmail.com' , '$2b$08$iwaJjyEnXTgOKK4G3zPT/eAVsAcGjfcmOKQZ0NoKwTladkj3LtrNe', 1, 'Engineer'),
+('Haneen Shahwan' , 'Haneen' , 'Shahwan', 'Haneen2015@hotmail.com' , '$2b$08$iwaJjyEnXTgOKK4G3zPT/eAVsAcGjfcmOKQZ0NoKwTladkj3LtrNe', 2, 'Engineer');
 
 
 
