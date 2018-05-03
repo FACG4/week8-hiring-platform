@@ -25,5 +25,6 @@ next()
       router.get('/login',login.get)
       router.post('/signup',signup.post);
       router.get('/signup',signup.get)
+      router.get('/check_login',checkLogin.get)
 
 module.exports = router;
