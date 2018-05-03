@@ -13,8 +13,8 @@ CREATE TABLE employees(
   email VARCHAR(30) NOT NULL,
   password VARCHAR(80) NOT NULL,
   skill_id INTEGER REFERENCES skills(id)
-  -- carrer VARCHAR(30) NOT NULL,
-  -- mobile VARCHAR(30) Not Null
+  carrer VARCHAR(30) NOT NULL,
+  mobile VARCHAR(30) Not Null
 );
 
 CREATE TABLE employers(
@@ -29,9 +29,9 @@ INSERT INTO skills(title) VALUES ('Design'), ('Programming'),('Testing'),('Mento
 ('Scrum master'),('Coordinator');
 
 
-INSERT INTO employees( fname, lname, email, password, skill_id) VALUES
-( 'sallam' , 'Tanna', 'sallamtanna2015@hotmail.com' , '123456789', 1),
-( 'Haneen' , 'Shahwan', 'Haneen2015@hotmail.com' , '123456789', 2);
+INSERT INTO employees(username, fname, lname, email, password, skill_id, carrer,mobile) VALUES
+('Sallam1994' , 'sallam' , 'Tanna', 'sallamtanna2015@hotmail.com' , '$2b$08$iwaJjyEnXTgOKK4G3zPT/eAVsAcGjfcmOKQZ0NoKwTladkj3LtrNe', 1, 'Engineer','123'),
+('Haneen Shahwan' , 'Haneen' , 'Shahwan', 'Haneen2015@hotmail.com' , '$2b$08$iwaJjyEnXTgOKK4G3zPT/eAVsAcGjfcmOKQZ0NoKwTladkj3LtrNe', 2, 'Engineer','1223');
 
 
 

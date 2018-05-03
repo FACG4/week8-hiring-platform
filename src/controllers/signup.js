@@ -23,7 +23,7 @@ if(isEmployee === undefined){
 
 
 else{
- 
+
   console.log(req.body.skill);
    signup.addEmployee(userData,(err,result)=>{
     if (err) {
@@ -31,9 +31,5 @@ else{
     }
     return res.send();
   })
-  res.render('login')
-}
-
-
-
+  res.redirect('login')
 };
