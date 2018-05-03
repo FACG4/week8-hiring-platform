@@ -1,9 +1,9 @@
-const findSkills = require('../database/queries/find_skillsQ');
+const {findSkillsQ} = require('../database/queries');
 const error = require('./error');
 exports.post=(req,res)=>{
     if (req.logged) {
       const skills=req.body.skills
-      findSkills(skills,(err, result) => {
+      findSkillsQ(skills,(err, result) => {
         if (err) {
           throw new Error(err);
         }

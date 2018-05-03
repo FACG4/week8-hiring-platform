@@ -16,7 +16,6 @@ router.post('/check_login',checkLogin.get)
 router.use((req,res,next)=>{
     checkCookies.get(req,res,(result)=>{
       req.logged=result
-      console.log(req.logged);
     })
 next()
 })

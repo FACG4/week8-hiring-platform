@@ -1,5 +1,5 @@
 
-const signup = require('../database/queries/signup');
+const {signup} = require('../database/queries');
 
 exports.get = (req, res) => {
     if (!req.logged) {
