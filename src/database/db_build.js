@@ -10,10 +10,4 @@ const runBuild = (cb) => {
     cb(null, res);
   });
 };
-
-// console.log('k');
-// runBuild((err,res)=>{
-//   console.log('i');
-// })
-
 module.exports = runBuild;
