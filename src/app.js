@@ -1,14 +1,19 @@
 const express = require('express');
 const path =  require('path');
 const exphbs = require('express-handlebars');
-const helpers = require('./views/helpers/index');
-const controllers = require('./controllers/index');
+ const controllers = require('./controllers/index');
+ const helpers = require("./views/helpers/index");
+ const bodyParser = require('body-parser');
+
 
 
 const app = express();
 
-app.set('views',path.join(__dirname,'views'));
-app.set('view engine','hbs');
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+app.set('views', path.join(__dirname,'views'));
+app.set('view engine', 'hbs');
 app.engine(
 	"hbs",
 	exphbs({
@@ -24,5 +29,5 @@ app.use(controllers);
 app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-
+console.log('app');
 module.exports = app;

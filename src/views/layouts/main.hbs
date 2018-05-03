@@ -1,23 +1,25 @@
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  {{>header}}
-</head>
+{{>head}}
+
 <body>
 
-  <!-- <header class="navbar">
-    {{!>navbar}}
-  </header> -->
+  <header class="navbar">
+    <div class="navbar__container">
+      <nav class="navbar__nav" role="navigation">
+
+      </nav>
+    </div>
+  </header>
 
   <main class="main">
     {{{body}}}
   </main>
 
-  <footer class="footer">
   {{>footer}}
-  </footer>
 
-  <script src="/js/main.js"></script>
+  <script src="/js/index.js"></script>
 
 </body>
+
 </html>

@@ -1,15 +1,19 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const favicon = require('serve-favicon');
 
+const signup = require('../database/queries/signup');
 
+exports.get = (req, res) => {
+  res.render('signup',{ activePage: { signup: true } });
 
-
-
-
-
-
-exports.signup = (req,res) => {
-  res.render('signup');
 }
+
+exports.post = (req, res) => {
+  const userData=req.body;
+  // console.log(userData);
+  signup.register(userData,(err,result)=>{
+    if (err) {
+      return res.status(409).send();
+    }
+    return res.send();
+  })
+  res.render('login')
+};
