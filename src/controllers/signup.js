@@ -1,4 +1,4 @@
-const hash = require('./hash.js');
+
 const {signup} = require('../database/queries');
 
 exports.get = (req, res) => {
@@ -15,8 +15,6 @@ exports.post = (req, res) => {
     const userData=req.body;
     const role = req.body.role;
     if(role==='employer'){
-    userData.hashedPassword = hash.hashed(userData.user_password);
-    console.log(hash.hashed(userData.user_password));
       signup.addEmployers(userData,(err,result)=>{
         if (err) {
           return res.status(409).send();
