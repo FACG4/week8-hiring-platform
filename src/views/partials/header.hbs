@@ -1,8 +1,12 @@
-<head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Sign Up Form</title>
-      <link rel="stylesheet" href="css/normalize.css">
-      <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="./../../public/style.css">
-  </head>
+<nav>
+  <div class="homePage">
+    <a href="/"><h5>Home Page</h5></a>
+
+  </div>
+  <div class="entry">
+    {{#if name}}
+    <a href="/profile/{{id}}"><h5>{{ name}}</h5></a>
+
+    {{/if}}
+  </div>
+</nav>

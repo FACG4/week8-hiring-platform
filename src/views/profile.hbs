@@ -1,31 +1,26 @@
 <h1>Profile</h1>
-<section>
-  <div class="userImage">
-    <img src="#" alt="user image">
-  </div>
+<section class="container">
 
+<div class="column">
   <div class="userName">
-    <h2>{{fname}} {{lname}}</h2>
+    <h2>user Name</h2>
   </div>
-
-<div class="aboutDiv">
-  <h2>About</h2>
-  <p>{{About}}</p>
+  <div class="skills">
+    <h2>Skills</h2>
+  </div>
+  <div class="contact">
+    <h2>Contact</h2>
+  </div>
 </div>
-
-<div class="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>{{title}}</li>
-  </ul>
+<div class="column">
+  <div class="userName">
+    <h4>{{result.fname}} {{result.lname}}</h4>
+  </div>
+  <div class="skills">
+      <h4>{{result.title}}</h4>
+  </div>
+  <div class="contact">
+      <h4>{{result.email}}</h4>
+  </div>
 </div>
-
-<div class="contact">
-<h2>Contact</h2>
-<ul>
-  <li>{{email}}</li>
-</ul>
-</div>
-
-
 </section>

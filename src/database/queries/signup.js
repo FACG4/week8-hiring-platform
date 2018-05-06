@@ -5,14 +5,14 @@ const bcrypt = require('bcrypt');
 
 
 const addEmployers=(userdata,callback) => {
-  const passwordHash = bcrypt.hash(userdata.user_password,8,(err,result)=>{
+  bcrypt.hash(userdata.user_password,8,(err,result)=>{
     if (err) {
         return callback(err)
     }
     else {
       const sql = {
         text: "INSERT INTO employers (fname,lname,password,email) VALUES ($1,$2,$3,$4)",
-        values: [`${userdata.first_name}`,`${userdata.last_name}`, `${passwordHash}`, `${userdata.user_email}`]}
+        values: [`${userdata.first_name}`,`${userdata.last_name}`, `${result}`, `${userdata.user_email}`]}
         db_connection.query(sql, (err,result) => {
           if (err) {
             callback(err);

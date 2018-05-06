@@ -4,19 +4,17 @@ const {signup} = require('../database/queries');
 exports.get = (req, res) => {
     if (!req.logged) {
       res.render('signup');
-
     }
     else{
       res.redirect('/')
     }
-
 }
 
 exports.post = (req, res) => {
   if (!req.logged) {
     const userData=req.body;
-    const isEmployee = req.body.isEmployee;
-    if(!isEmployee){
+    const role = req.body.role;
+    if(role==='employer'){
       signup.addEmployers(userData,(err,result)=>{
         if (err) {
           return res.status(409).send();
