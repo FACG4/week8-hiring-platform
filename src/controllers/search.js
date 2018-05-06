@@ -8,11 +8,11 @@ exports.post=(req,res)=>{
           throw new Error(err);
         }
         else if (result== null){
-          res.render('home' ,{noResult:'no'})
+          res.render('home' ,{noResult:'no',name:req.name})
         }
         else {
 
-          res.render('home',{data:result});
+          res.render('home',{data:result,name:req.name});
         }
       })
 

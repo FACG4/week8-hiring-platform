@@ -129,9 +129,33 @@ label.light {
   display: flex;
   flex-direction: column;
 }
-.row{
+.row {
   display: flex;
   justify-content: space-around;
-  /* flex-direction: column; */
-
+  width: 100%;
+  align-items: center;
+}
+.row .title{
+width: 25%;
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+nav{
+  display: flex;
+  background-color:#4bc970;
+  color: #fff;
+  justify-content: space-between;
+  margin:0;
+  padding: 0;
+}
+nav a{
+  color:#fff;
+  text-decoration: none;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

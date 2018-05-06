@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-exports.get=(req,res,cb)=>{
+exports.get=(req,res,next)=>{
 
 const token=req.cookies.token
 if (token) {
@@ -8,12 +8,15 @@ if (token) {
           return cb('changed')
         }
         else {
-            cb(true)
+            req.logged=true
+            req.name=`${decoded.fname} ${decoded.lname}`
+            req.id=decoded.id
         }
       })
 }
 else {
-  cb(false)
+  req.logged=false
 
 }
+next()
   }

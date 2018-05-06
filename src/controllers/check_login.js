@@ -12,7 +12,7 @@ checkLogin(email,password,(err,result)=>{
     }
     else {
       createToken.get(res,result)
-
+      
     }
 })
 }

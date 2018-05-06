@@ -1,27 +1,19 @@
 const db_connection = require('../db_connection');
-
 const bcrypt = require('bcrypt');
 
 
 
 const addEmployers=(userdata,callback) => {
-  const passwordHash = bcrypt.hash(userdata.user_password,8,(err,result)=>{
-    if (err) {
-        return callback(err)
-    }
-    else {
-      const sql = {
-        text: "INSERT INTO employers (fname,lname,password,email) VALUES ($1,$2,$3,$4)",
-        values: [`${userdata.first_name}`,`${userdata.last_name}`, `${passwordHash}`, `${userdata.user_email}`]}
-        db_connection.query(sql, (err,result) => {
-          if (err) {
-            callback(err);
-          } else {
-            callback(null,result);
-          }
-        });
-    }
-  });
+  const sql = {
+    text: "INSERT INTO employers (fname,lname,password,email) VALUES ($1,$2,$3,$4)",
+    values: [`${userdata.first_name}`,`${userdata.last_name}`, userdata.hashedPassword, `${userdata.user_email}`]}
+    db_connection.query(sql, (err,result) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null,result);
+      }
+    });
 }
 
 
