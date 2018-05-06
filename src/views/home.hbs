@@ -1,0 +1,49 @@
+<section class='abstract'>
+<div class="imgDiv">
+
+</div>
+<form class="searchForm" action="/search" method="post">
+  <input type="text" name="skills" required>
+  <input type="submit" >
+</form>
+
+{{#if noResult}}
+ <h1>sorry no results found</h1>
+{{/if}}
+{{#if data }}
+<div class="searchTable">
+
+<div class="tableHead row">
+<div class="title name">
+name
+</div>
+<div class="title skills">
+career
+</div>
+<div class="title  skills">
+skills
+</div>
+
+</div>
+<div class="tableResult">
+
+  {{#each data}}
+  <div class="tableResult row">
+  <div class="title name">
+    <a href="/profile/{{this.id}}">  {{uppercase this.fname}} {{uppercase this.lname}}</a>
+
+  </div>
+  <div class="title skills">
+  {{uppercase this.career}}
+  </div>
+  <div class="title  skills">
+  {{uppercase this.title}}
+  </div>
+
+  </div>
+  {{/each}}
+</div>
+</div>
+
+ {{/if}}
+</section>
